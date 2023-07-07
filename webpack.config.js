@@ -14,7 +14,7 @@ module.exports = {
       template: path.join(__dirname, "public", "index.html"),
     }),
     new CompressionPlugin({
-      algorithm: "brotli",
+      algorithm: "gzip",
     }),
   ],
   devServer: {
