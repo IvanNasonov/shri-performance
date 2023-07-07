@@ -6,7 +6,7 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     filename: "main.js",
-    path: path.resolve(__dirname, "."),
+    path: path.resolve(__dirname, "build"),
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -15,7 +15,7 @@ module.exports = {
   ],
   devServer: {
     static: {
-      directory: path.join(__dirname, "."),
+      directory: path.join(__dirname, "build"),
     },
     port: 3000,
   },
