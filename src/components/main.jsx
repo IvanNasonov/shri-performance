@@ -2,8 +2,6 @@ import React from "react";
 import { TABS_KEYS, TABS } from "../constants";
 import { Event } from "./event";
 
-let sizes = [];
-
 export function Main() {
   const ref = React.useRef();
   const initedRef = React.useRef(false);
@@ -21,12 +19,11 @@ export function Main() {
     setActiveTab(event.target.value);
   };
 
-  const onSize = React.useCallback(
-    (size) => {
-      sizes.push(size);
-    },
-    [sizes]
-  );
+  let sizes = [];
+
+  const onSize = (size) => {
+    sizes = [...sizes, size];
+  };
 
   React.useEffect(() => {
     const sumWidth = sizes.reduce((acc, item) => acc + item.width, 0);
